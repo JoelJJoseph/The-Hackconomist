@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Housing",
+    "icon": "fas fa-home",
+    "iconURL": "https://fontawesome.com/icons/home?style=solid"
+  },
+  {
+    "name": "Traffic",
+    "icon": "fas fa-shuttle-van",
+    "iconURL": "https://fontawesome.com/icons/shuttle-van?style=solid"
+  },
+  {
+    "name": "Entertainment",
+    "icon": "fas fa-grin-beam",
+    "iconURL": "https://fontawesome.com/icons/grin-beam?style=solid"
+  },
+  {
+    "name": "Food",
+    "icon": "fas fa-utensils",
+    "iconURL": "https://fontawesome.com/icons/utensils?style=solid"
+  },
+  {
+    "name": "Others",
+    "icon": "fas fa-pen",
+    "iconURL": "https://fontawesome.com/icons/pen?style=solid"
+  }
+]
