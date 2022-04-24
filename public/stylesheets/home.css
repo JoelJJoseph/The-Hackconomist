@@ -1,0 +1,28 @@
+body {
+  background-image: url(https://unsplash.com/photos/vGgn0xLdy8s/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MzZ8fHN0dWRlbnR8ZW58MHwxfHx8MTY0OTUxNjMzMg&force=true);
+  background-position: center;
+  background-size: cover;
+  position: fixed;
+  background-repeat: no-repeat;
+}
+
+.nav-settings {
+  display: none;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 0.3s ease-out;
+}
+.navbar-toggle:checked ~ .nav-settings {
+  display: block;
+  transform: scale(1, 1);
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    background-image: url(https://unsplash.com/photos/Z3ownETsdNQ/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8OTl8fHN0dWRlbnR8ZW58MHwwfHx8MTY0OTU4MjAyMA&force=true);
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    background-repeat: no-repeat;
+  }
+}
