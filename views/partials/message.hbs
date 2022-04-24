@@ -1,0 +1,25 @@
+{{#if success_msg}}
+<div class="message alert-success">
+  <div class="m-auto" role="alert">
+    {{success_msg}}
+  </div>
+</div>
+{{/if}}
+
+{{#if warning_msg}}
+<div class="message alert-warning">
+  <div class="m-auto" role="alert">
+    {{warning_msg}}
+  </div>
+</div>
+{{/if}}
+
+{{#if errors}}
+<div class="alert-warning message flex-col m-auto p-2">
+  {{#each errors}}
+  <div class="flex justify-center m-auto" role="alert">
+    {{this.message}}
+  </div>
+  {{/each}}
+</div>
+{{/if}}

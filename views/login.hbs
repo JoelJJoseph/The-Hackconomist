@@ -1,0 +1,29 @@
+<div class="container-settings">
+	<div class="login-container forms-bg w-10/12 h-2/3 lg:h-1/2 xl:h-2/3 mt-10 xl:mt-32 relative">
+		<div class="title flex justify-center align-middle relative">
+			<h1 class="lr-forms-title mt-6 mb-3">Login</h1>
+		</div>
+		<form class="lr-form" action="/users/login" method="POST">
+			<label class="block mb-4" for="email">
+				<span class="text-md">Email</span>
+				<input type="email" class="form-input focus:outline-none focus:ring focus: ring-offset-2 focus:ring-yellow-300"
+					placeholder="student@example.com" id="email" name="email" required>
+			</label>
+			<label class="block mb-8" for="password">
+				<span>Password</span>
+				<input type="password"
+					class="form-input focus:outline-none focus:ring focus: ring-offset-2 focus:ring-yellow-300"
+					placeholder="12345678" id="password" name="password" required>
+			</label>
+			<div class="login-btns flex-col">
+				<button type="submit" class="lr-submit hover:bg-yellow-600">Login</button>
+				
+			</div>
+			<div class="lead">
+				<p class="register-link mt-6 text-md flex justify-center text-gray-400">
+					No Account? <a href="/users/register" class="underline text-yellow-600 mx-2">Register</a>
+				</p>
+			</div>
+		</form>
+	</div>
+</div>

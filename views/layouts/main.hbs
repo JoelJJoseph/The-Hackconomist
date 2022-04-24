@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{#if isAuthenticated}}{{user.name}}
+    
+    {{else}}
+    Arclight Expense
+    {{/if}}</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+    integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous" />
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/home.css">
+</head>
+
+<body class="relative w-screen flex-col items-center background">
+  <header class="h-16 w-screen">
+    <nav class="navbar">
+      {{!-- User name display if logged in --}}
+      <div class="{{#if isAuthenticated}}lg:ml-4{{else}}m-auto{{/if}}">
+        <a href="/" class="m-auto text-2xl font-bold text-gray-200">
+          {{#if isAuthenticated}}{{user.name}}
+          
+          {{else}}
+          Arclight Expense
+          {{/if}}
+        </a>
+      </div>
+      {{#if isAuthenticated}}
+      {{!-- Links for RWD-lg --}}
+      <div class="links hidden lg:block lg:w-2/6 xl:w-3/5">
+        <ul class="w-full h-full list-none flex items-center text-gray-50">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/users/settings/edit">Settings</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/overview">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="http://localhost:3000/stonks/report">Invest in stocks</a></li>
+        </ul>
+      </div>
+      {{!-- mobile hambuger list --}}
+      <div class="hamburger flex justify-start items-center text-white">
+        <a href="/users/logout" class="hidden lg:block"><button class="logout-btn">Logout</button></a>
+        <input type="checkbox" class="navbar-toggle hidden" id="navbar-toggle" />
+        <label class="flex items-center" for="navbar-toggle">
+          <span class="user-name mr-4 hidden lg:block"><i class="fas fa-caret-down mr-2"></i>{{user.name}}</span>
+          <img src="{{user.avatar}}" alt="user-avatar" class="user-avatar rounded-full w-10 h-10 lg:mr-4" />
+        </label>
+        {{!-- mobile hambuger list --}}
+        <nav class="nav-settings bg-gray-700 text-gray-400 z-10 w-screen h-screen absolute top-16 left-0 py-10">
+          <img class="avatar rounded-full h-40 w-40 lg:h-60 lg:w-60 m-auto" src="{{user.avatar}}" alt="user-avatar" />
+          <p class="hamburger-name">{{user.name}}</p>
+          <a class="hamburger-link hover:bg-blue-900 hover:text-white" href="/">Home</a>
+          <a class="hamburger-link hover:bg-blue-900" href="/users/settings/edit">Account
+            Settings</a>
+          <a class="hamburger-link hover:bg-blue-900" href="/overview">Overview</a>
+          <a class="hamburger-link hover:bg-blue-900" href="/users/logout">Logout</a>
+        </nav>
+      </div>
+      {{/if}}
+    </nav>
+  </header>
+  {{> message}}
+  {{{body}}}
+
+  <script type="text/javascript" src="/javascripts/utility.js"></script>
+  <script src="/javascripts/main.js"></script>
+</body>
+
+</html>

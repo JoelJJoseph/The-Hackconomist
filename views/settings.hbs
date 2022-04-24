@@ -1,0 +1,38 @@
+<div class="settings-container w-full h-full m-auto flex-col mb-80">
+  <div class="user-avatar h-80 w-80 bg-cover m-auto mt-32 rounded-md" style="background-image: url({{ user.avatar }});">
+  </div>
+  <div class="form-container m-auto mt-16 w-10/12 h-2/3 md:w-8/12 max-w-lg bg-white rounded-lg shadow-lg flex-col">
+    <div class="title flex justify-center align-middle relative">
+      <h1 class="text-center mt-6 mb-3 text-3xl font-bold tracking-wider pl-5">Settings</h1>
+    </div>
+    <form class="input-group w-8/12 m-auto" action='/users/settings?_method=PUT' method='POST' class='mt-4'
+      enctype="multipart/form-data">
+      <div class="labels">
+        <label class="block mb-4" for="name">
+          <span class="text-md">Name</span>
+          <input type="text"
+            class="form-input mt-1 px-5 py-3 block w-full border-gray-300 border-2 rounded-xl focus:outline-none focus:ring focus: ring-offset-2 focus: ring-yellow-300"
+            value="{{user.name}}" id="name" name="name" required>
+        </label>
+        <label class="block mb-4" for="email">
+          <span class="text-md">Email</span>
+          <input type="text"
+            class="form-input mt-1 px-5 py-3 block w-full bg-gray-200 border-gray-300 border-2 rounded-xl focus:outline-none focus:ring focus: ring-offset-2 focus: ring-yellow-300"
+            value="{{user.email}}" id="email" name="email" disabled>
+        </label>
+        <label class="block" for="avatar">
+          <span class="text-md">Avatar</span>
+          <input type="file"
+            class="form-input mt-1 px-5 py-3 block w-full border-gray-300 border-2 rounded-xl focus:outline-none focus:ring focus: ring-offset-2 focus: ring-yellow-300"
+            id="avatar" name="avatar">
+        </label>
+      </div>
+      <button type="submit"
+        class="submit block mt-6 px-5 py-3 w-full rounded-full shadow-sm bg-yellow-400 text-white text-xl mb-2 hover:bg-yellow-600"
+        onclick="return checkForm()">Submit</button>
+      <a href='/'
+        class="btn mt-4 back-btn py-3 w-full rounded-full shadow-sm bg-gray-500 text-white text-xl mb-2 hover:bg-gray-700 flex justify-center">Back
+      </a>
+    </form>
+  </div>
+</div>

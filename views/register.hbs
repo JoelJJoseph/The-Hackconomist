@@ -1,0 +1,41 @@
+<div class="container-settings">
+  <div class="register-container forms-bg w-10/12 h-5/6 lg:h-2/3 xl:h-4/5 mt-10 xl:mt-32 relative">
+    <div class="title flex justify-center align-middle relative">
+     
+      <h1 class="lr-forms-title mt-7 mb-5">Register</h1>
+    </div>
+    <form class="lr-form" action="/users/register" method="POST">
+      <label class="block mb-4" for="name">
+        <span>Name</span>
+        <input type="text" class="form-input focus:outline-none focus:ring focus: ring-offset-2 focus:ring-yellow-300"
+          placeholder="student" {{#if name}} value="{{name}}" {{else}} value="{{userInput.name}}" {{/if}} id="name"
+          name="name" required>
+      </label>
+      <label class="block mb-4" for="email">
+        <span class="text-md">Email</span>
+        <input type="email" class="form-input focus:outline-none focus:ring focus: ring-offset-2 focus:ring-yellow-300"
+          placeholder="student@example.com" value="{{userInput.email}}" id="email" name="email" required>
+      </label>
+      <label class="block mb-4" for="password">
+        <span>Password</span>
+        <input type="password"
+          class="form-input focus:outline-none focus:ring focus: ring-offset-2 focus:ring-yellow-300"
+          placeholder="4~8 characters password" id="password" name="password" required>
+      </label>
+      <label class="block mb-10" for="confirmPassword">
+        <span>Confirm Password</span>
+        <input type="password"
+          class="form-input focus:outline-none focus:ring focus: ring-offset-2 focus:ring-yellow-300"
+          placeholder="Confirm your password" id="confirmPassword" name="confirmPassword" required>
+      </label>
+      <div class="submit-btn flex-col">
+        <button type="submit" class="lr-submit hover:bg-yellow-600">Submit</button>
+      </div>
+      <div class="lead">
+        <p class="register-link mt-6 text-md flex justify-center text-gray-400">
+          Have An Account? <a href="/users/login" class="underline text-yellow-600 mx-2">Login</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>
